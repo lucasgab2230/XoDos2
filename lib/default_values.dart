@@ -177,6 +177,26 @@ WINEDLLOVERRIDES="d3d8=b,d3d9=b,d3d10core=b,d3d11=b,dxgi=b" wine  reg add 'HKEY_
     {"name":"Kill wine Process", "command":"wineserver -k"}
   ];
 
+  // Default box86 / wine32 quick commands (Chinese)
+  static const box86Commands = [
+    {"name":"Box86 wine32 配置", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 winecfg"},
+    {"name":"Box86 wine32 资源管理器", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 wine explorer"},
+    {"name":"Box86 wine32 记事本", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 notepad"},
+    {"name":"Box86 wine32 注册表编辑器", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 regedit"},
+    {"name":"Box86 wine32 控制面板", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 wine control"},
+    {"name":"强制关闭 Box86 Wine32", "command":"WINEPREFIX=\$HOME/.wine32 wineserver -k"},
+  ];
+
+  // Default box86 / wine32 quick commands (English)
+  static const box86Commands4En = [
+    {"name":"Box86 Wine32 Configuration", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 winecfg"},
+    {"name":"Box86 Wine32 Explorer", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 wine explorer"},
+    {"name":"Box86 Wine32 Notepad", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 notepad"},
+    {"name":"Box86 Wine32 Regedit", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 regedit"},
+    {"name":"Box86 Wine32 Control Panel", "command":"WINEARCH=win32 WINEPREFIX=\$HOME/.wine32 wine control"},
+    {"name":"Kill Box86 Wine32 Process", "command":"WINEPREFIX=\$HOME/.wine32 wineserver -k"},
+  ];
+
   // Default numpad
   static const termCommands = [
     {"name": "Esc", "key": TerminalKey.escape},

@@ -1,0 +1,58 @@
+#!/bin/bash
+
+echo "Updating packages..."
+sudo apt update
+sudo apt upgrade -y
+
+echo "Enabling armhf (32-bit ARM) architecture..."
+sudo dpkg --add-architecture armhf
+sudo apt update
+
+echo "Installing 32-bit base libraries..."
+sudo apt install -y libc6:armhf libstdc++6:armhf
+
+echo "Adding Box86 repository..."
+sudo wget https://ryanfortner.github.io/box86-debs/box86.list -O /etc/apt/sources.list.d/box86.list
+wget -qO- https://ryanfortner.github.io/box86-debs/KEY.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/box86-debs-archive-keyring.gpg
+sudo apt update
+
+echo "Installing Box86..."
+sudo apt install -y box86-android
+
+if [ $? -ne 0 ]; then
+    echo "Box86 installation failed. Trying alternative method..."
+    sudo apt install -y box86
+    if [ $? -ne 0 ]; then
+        echo "Box86 installation failed. Exiting..."
+        exit 1
+    fi
+fi
+
+echo "Installing Wine 32-bit..."
+sudo apt install -y wine wine32:armhf libwine:armhf fonts-wine
+
+if [ $? -ne 0 ]; then
+    echo "Wine 32-bit install failed, trying fallback..."
+    sudo apt install -y wine32 wine64 libwine
+fi
+
+echo "Initializing Wine 32-bit prefix..."
+export WINEARCH=win32
+export WINEPREFIX="$HOME/.wine32"
+wineboot --init
+
+echo "Installing DXVK for 32-bit..."
+DXVK_VER=$(wget -qO- https://api.github.com/repos/doitsujin/dxvk/releases/latest | grep -oP '"tag_name": "v\K[^"]+')
+if [ -n "$DXVK_VER" ]; then
+    wget "https://github.com/doitsujin/dxvk/releases/download/v${DXVK_VER}/dxvk-${DXVK_VER}.tar.gz" -O /tmp/dxvk.tar.gz
+    tar xzf /tmp/dxvk.tar.gz -C /tmp/
+    DXVK_DIR=$(ls -d /tmp/dxvk-*/ | head -1 | sed 's|/$||')
+    if [ -d "$DXVK_DIR/x32" ]; then
+        cp "$DXVK_DIR/x32/"*.dll "$HOME/.wine32/drive_c/windows/system32/" 2>/dev/null || true
+    fi
+    rm -f /tmp/dxvk.tar.gz
+    rm -rf /tmp/dxvk-*/
+fi
+
+echo "Box86 and Wine 32-bit installation completed"
+echo "Use WINEARCH=win32 WINEPREFIX=~/.wine32 wine <program.exe> to run 32-bit Windows apps"

@@ -74,6 +74,8 @@
   "installHangoverStable": "Hangover 安定版をインストール",
   "installHangoverLatest": "Hangover 最新版をインストール（失敗する可能性あり）",
   "uninstallHangover": "Hangover をアンインストール",
+  "installBox86": "Box86 をインストール (Wine 32ビット)",
+  "uninstallBox86": "Box86 をアンインストール",
   "clearWineData": "Wine データをクリア",
   "wineCommandsHint": "よく使う Wine コマンド。クリックして GUI を起動します。時間がかかる場合があります。\n\n典型的な起動時間：\nTiger T7510 6GB: 1分以上\nSnapdragon 870 12GB: 約10秒",
   "switchToJapanese": "システム言語を日本語に切り替え",

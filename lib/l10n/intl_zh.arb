@@ -73,6 +73,8 @@
   "installHangoverStable": "安装Hangover稳定版",
   "installHangoverLatest": "安装Hangover最新版（可能出错）",
   "uninstallHangover": "卸载Hangover",
+  "installBox86": "安装Box86（Wine 32位）",
+  "uninstallBox86": "卸载Box86",
   "clearWineData": "清空Wine数据",
   "wineCommandsHint": "Wine的常用指令。点击后前往图形界面耐心等待。\n\n任意程序启动参考时间：\n虎贲T7510 6GB 超过一分钟\n骁龙870 12GB 约10秒\n",
   "switchToJapanese": "切换系统到日语",

@@ -242,6 +242,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get uninstallHangover => 'Hangover हटाएँ';
 
   @override
+  String get installBox86 => 'Box86 इंस्टॉल करें (Wine 32-bit)';
+
+  @override
+  String get uninstallBox86 => 'Box86 हटाएँ';
+
+  @override
   String get clearWineData => 'Wine डेटा साफ़ करें';
 
   @override

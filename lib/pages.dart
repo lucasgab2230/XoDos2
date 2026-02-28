@@ -1206,6 +1206,79 @@ OutlinedButton(
               ),
               OutlinedButton(
                 style: D.commandButtonStyle,
+                child: Text(AppLocalizations.of(context)!.installBox86),
+                onPressed: () async {
+                  Util.termWrite("bash /home/tiny/.local/share/tiny/extra/install-box86");
+                  G.pageIndex.value = 0;
+                },
+              ),
+              OutlinedButton(
+                style: D.commandButtonStyle,
+                child: Text(AppLocalizations.of(context)!.uninstallBox86),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      icon: const Icon(Icons.warning, color: Colors.orange, size: 48),
+                      title: Text(AppLocalizations.of(context)!.uninstallBox86),
+                      content: const Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text('This will delete:'),
+                          SizedBox(height: 8),
+                          Text('• Box86 (32-bit x86 emulator)', style: TextStyle(color: Colors.red)),
+                          Text('• Wine 32-bit prefix (~/.wine32)', style: TextStyle(color: Colors.red)),
+                          SizedBox(height: 12),
+                          Text('This action cannot be undone!'),
+                        ],
+                      ),
+                      actions: [
+                        OutlinedButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: const Text('Cancel'),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                            G.pageIndex.value = 0;
+                            Util.termWrite("sudo apt autoremove --purge -y box86 box86-android wine32 libwine:armhf");
+                            Util.termWrite("rm -rf ~/.wine32");
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Box86 and Wine 32-bit deleted'),
+                                backgroundColor: Colors.red,
+                              ),
+                            );
+                          },
+                          child: const Text('Delete Now'),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ),
+              const SizedBox.square(dimension: 8),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 4.0,
+                runSpacing: 4.0,
+                children: (Localizations.localeOf(context).languageCode == 'zh' ? D.box86Commands : D.box86Commands4En)
+                    .asMap()
+                    .entries
+                    .map<Widget>((e) {
+                  return OutlinedButton(
+                    style: D.commandButtonStyle,
+                    child: Text(e.value["name"]!),
+                    onPressed: () {
+                      Util.termWrite("${e.value["command"]!} &");
+                      G.pageIndex.value = 0;
+                    },
+                  );
+                }).toList(),
+              ),
+              OutlinedButton(
+                style: D.commandButtonStyle,
                 child: Text('Delete Wine x86_64🍷'),
                 onPressed: () {
                   showDialog(

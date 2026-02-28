@@ -237,11 +237,13 @@ class AppLocalizationsZh extends AppLocalizations {
   String get uninstallHangover => '卸载Hangover';
 
   @override
-  String get clearWineData => '清空Wine数据';
+  String get installBox86 => '安装Box86（Wine 32位）';
 
   @override
-  String get wineCommandsHint =>
-      'Wine的常用指令。点击后前往图形界面耐心等待。\n\n任意程序启动参考时间：\n虎贲T7510 6GB 超过一分钟\n骁龙870 12GB 约10秒\n';
+  String get uninstallBox86 => '卸载Box86';
+
+  @override
+  String get clearWineData => '清空Wine数据';
 
   @override
   String get switchToJapanese => '切换系统到日语';
@@ -779,6 +781,12 @@ class AppLocalizationsZhHant extends AppLocalizationsZh {
 
   @override
   String get uninstallHangover => '解除安裝 Hangover';
+
+  @override
+  String get installBox86 => '安裝 Box86（Wine 32 位元）';
+
+  @override
+  String get uninstallBox86 => '解除安裝 Box86';
 
   @override
   String get clearWineData => '清除 Wine 資料';

@@ -242,6 +242,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get uninstallHangover => 'Удалить Hangover';
 
   @override
+  String get installBox86 => 'Установить Box86 (Wine 32-bit)';
+
+  @override
+  String get uninstallBox86 => 'Удалить Box86';
+
+  @override
   String get clearWineData => 'Очистить данные Wine';
 
   @override

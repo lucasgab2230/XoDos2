@@ -74,6 +74,8 @@
   "installHangoverStable": "Hangover स्थिर संस्करण स्थापित करें",
   "installHangoverLatest": "Hangover नवीनतम संस्करण स्थापित करें (विफल हो सकता है)",
   "uninstallHangover": "Hangover हटाएँ",
+  "installBox86": "Box86 इंस्टॉल करें (Wine 32-bit)",
+  "uninstallBox86": "Box86 हटाएँ",
   "clearWineData": "Wine डेटा साफ़ करें",
   "wineCommandsHint": "सामान्य Wine कमांड। GUI प्रारंभ करने के लिए क्लिक करें और प्रतीक्षा करें।\n\nसामान्य लोड समय:\nTiger T7510 6GB: 1 मिनट से अधिक\nSnapdragon 870 12GB: ~10 सेकंड",
   "switchToJapanese": "सिस्टम को जापानी में बदलें",
