@@ -238,6 +238,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get uninstallHangover => 'Hangover をアンインストール';
 
   @override
+  String get installBox86 => 'Box86 をインストール (Wine 32ビット)';
+
+  @override
+  String get uninstallBox86 => 'Box86 をアンインストール';
+
+  @override
   String get clearWineData => 'Wine データをクリア';
 
   @override

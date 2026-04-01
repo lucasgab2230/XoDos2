@@ -557,6 +557,18 @@ abstract class AppLocalizations {
   /// **'Uninstall Hangover'**
   String get uninstallHangover;
 
+  /// No description provided for @installBox86.
+  ///
+  /// In en, this message translates to:
+  /// **'Install Box86 (Wine 32-bit)'**
+  String get installBox86;
+
+  /// No description provided for @uninstallBox86.
+  ///
+  /// In en, this message translates to:
+  /// **'Uninstall Box86'**
+  String get uninstallBox86;
+
   /// No description provided for @clearWineData.
   ///
   /// In en, this message translates to:

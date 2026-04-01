@@ -73,6 +73,8 @@
   "installHangoverStable": "安裝 Hangover 穩定版",
   "installHangoverLatest": "安裝 Hangover 最新版（可能有錯誤）",
   "uninstallHangover": "解除安裝 Hangover",
+  "installBox86": "安裝 Box86（Wine 32 位元）",
+  "uninstallBox86": "解除安裝 Box86",
   "clearWineData": "清除 Wine 資料",
   "wineCommandsHint": "Wine 常用指令。點擊後進入圖形介面，請耐心等候。\n\n不同裝置啟動程式參考時間：\n虎賁 T7510 6GB 超過一分鐘\n驍龍 870 12GB 約 10 秒\n",
   "switchToJapanese": "切換系統為日語",

@@ -74,6 +74,8 @@
   "installHangoverStable": "Instalar Hangover estável",
   "installHangoverLatest": "Instalar Hangover mais recente (pode falhar)",
   "uninstallHangover": "Desinstalar Hangover",
+  "installBox86": "Instalar Box86 (Wine 32 bits)",
+  "uninstallBox86": "Desinstalar Box86",
   "clearWineData": "Limpar dados Wine",
   "wineCommandsHint": "Comandos comuns do Wine. Abra a GUI e aguarde.\n\nTempos típicos:\nTiger T7510 6GB: 1+ min\nSnapdragon 870 12GB: ~10 s",
   "switchToJapanese": "Mudar sistema para japonês",
